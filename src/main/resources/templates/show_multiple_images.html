@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
       <meta charset="UTF-8">
       <title>Multiple Images</title>
@@ -15,6 +15,32 @@
     <link rel="stylesheet" href="css/style.css" th:href="@{../css/style.css}">
   </head>
   <body>
+    <div th:insert="fragments/havbar.html :: customNavbar"></div>
+    <main class="container">
+      <section class="customSection" th:each="item : ${collection}" th:object="${item}">
+        <div>
+          <h1 th:text="*{title}">Title</h1>
+          <p>The photo was taken: <span th:text="*{getDate()}">text</span></p>
+          <div th:if="*{getCopyright()!= null}">
+            <p>Copyright: <span th:text="*{getCopyright()}">text</span></p>
+          </div>
+          <p class="photoDescription">Photo description: <span th:text="*{getExplanation()}">text</span></p>
+        </div>
+        <div th:if="*{getVideo()}">
+          <div class="customContainer">
+            <a class="btn customButton" href="#"
+               th:href="*{getUrl()}" target="_blank">
+              Watch video
+            </a>
+          </div>
+        </div>
+        <div th:unless="*{getVideo()}" class="customContainer">
+          <img src="#" th:src="*{getUrl()}">
+        </div>
+      </section>
+    </main>
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

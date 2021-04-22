@@ -17,7 +17,7 @@
     <body>
     <div th:insert="fragments/havbar.html :: customNavbar"></div>
     <main class="container" th:object="${item}">
-        <section>
+        <section class="customSection">
             <div>
                 <h1 th:text="*{title}">Title</h1>
                 <p>The photo was taken: <span th:text="*{getDate()}">text</span></p>
@@ -26,7 +26,15 @@
                 </div>
                 <p class="photoDescription">Photo description: <span th:text="*{getExplanation()}">text</span></p>
             </div>
-            <div class="customContainer">
+            <div th:if="*{getVideo()}">
+                <div class="customContainer">
+                    <a class="btn customButton" href="#"
+                       th:href="*{getUrl()}" target="_blank">
+                        Watch video
+                    </a>
+                </div>
+            </div>
+            <div th:unless="*{getVideo()}" class="customContainer">
                 <img src="#" th:src="*{getUrl()}">
             </div>
         </section>

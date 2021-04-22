@@ -12,6 +12,7 @@ public class ItemDto
     private String serviceVersion;
     private String title;
     private String url;
+    private Boolean isVideo;
 
     public ItemDto() {
     }
@@ -78,5 +79,13 @@ public class ItemDto
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Boolean getVideo() {
+        return isVideo;
+    }
+
+    public void setVideo(Boolean video) {
+        isVideo = video;
     }
 }

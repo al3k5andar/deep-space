@@ -26,11 +26,9 @@
                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Action
                       </a>
-                      <div class="dropdown-menu" aria-labelledby="actionDropdown">
-                          <a class="dropdown-item" href="#">Show last 2 pictures</a>
-                          <a class="dropdown-item" href="#">Show last 4 pictures</a>
-                          <a class="dropdown-item" href="#">Choose picture date</a>
-                          <a class="dropdown-item" href="#">Show pictures in range</a>
+                      <div class="dropdown-menu customDropdown" aria-labelledby="actionDropdown">
+                          <a class="dropdown-item" href="#" th:href="@{/showYesterdayImage}">Show yesterday image</a>
+                          <a class="dropdown-item" href="#" th:href="@{/form}">Choose by date</a>
                       </div>
                   </li>
               </ul>
