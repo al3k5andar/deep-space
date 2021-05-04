@@ -60,4 +60,10 @@ public class ItemController
         return "show_image";
     }
 
+    @GetMapping("/aboutMe")
+    public String showAboutMe(Model model){
+//        coming soon
+        return "about_me";
+    }
+
 }
