@@ -10,7 +10,7 @@
   </head>
   <body>
   <div th:fragment="customNavbar">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
           <a class="navbar-brand" href="#" th:href="@{/todayImage}">Today</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                   aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
                   </li>
               </ul>
               <div class="d-inline navbar-nav my-2 my-lg-0">
-                  <a class="nav-link my-2 my-sm-0" href="#" th:href="@{/aboutMe}">About Me</a>
+                  <a class="nav-link my-2 my-sm-0" href="#" th:href="@{/info/}">About Me</a>
               </div>
           </div>
       </nav>
