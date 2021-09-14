@@ -17,73 +17,75 @@
   <body>
     <div th:insert="fragments/havbar.html :: customNavbar"></div>
     <main class="container">
-      <section class="formWrapper">
-        <div class="accordion" id="customAccordion">
-          <div class="card">
-            <div class="card-header" id="first">
-              <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left text-decoration-none" type="button"
-                        data-toggle="collapse" data-target="#collapseFirst"
-                        aria-expanded="true" aria-controls="collapseFirst">
-                  Get image by date
-                </button>
-              </h2>
-            </div>
-            <div id="collapseFirst" class="collapse show" aria-labelledby="first" data-parent="#customAccordion">
-              <div class="card-body">
-                <form th:action="@{/getByDate}" method="post">
-                  <div class="row d-flex justify-content-center">
-                    <div class="col-md-4">
-                      <div class="text-center">
-                        <label for="inputDate">Choose date</label>
+      <div class="row">
+        <section class="formWrapper">
+          <div class="accordion" id="customAccordion">
+            <div class="card">
+              <div class="card-header" id="first">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left text-decoration-none" type="button"
+                          data-toggle="collapse" data-target="#collapseFirst"
+                          aria-expanded="true" aria-controls="collapseFirst">
+                    Get image by date
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseFirst" class="collapse show" aria-labelledby="first" data-parent="#customAccordion">
+                <div class="card-body">
+                  <form th:action="@{/getByDate}" method="post">
+                    <div class="row d-flex justify-content-center">
+                      <div class="col-md-4">
+                        <div class="text-center">
+                          <label for="inputDate">Choose date</label>
+                        </div>
+                          <input class="form-control" type="date" id="inputDate" name="inputDate">
                       </div>
-                        <input class="form-control" type="date" id="inputDate" name="inputDate">
+                      <div class="buttonContainer">
+                        <button class="btn btn-outline-primary" type="submit">Submit</button>
+                      </div>
                     </div>
-                    <div class="buttonContainer">
-                      <button class="btn btn-outline-primary" type="submit">Submit</button>
-                    </div>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="card">
-            <div class="card-header" id="second">
-              <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left text-decoration-none" type="button"
-                        data-toggle="collapse" data-target="#collapseSecond"
-                        aria-expanded="false" aria-controls="collapseSecond">
-                  Get in range
-                </button>
-              </h2>
-            </div>
-            <div id="collapseSecond" class="collapse" aria-labelledby="second" data-parent="#customAccordion">
-              <div class="card-body">
-                <form th:action="@{/getInRange}" method="post">
-                  <div class="row d-flex justify-content-around">
-                    <div class="col-md-3 input-group inputGroupContainer">
-                      <div class="row d-flex justify-content-center">
-                        <label for="start">Start date</label>
-                        <input class="form-control" type="date" id="start" name="start">
+            <div class="card">
+              <div class="card-header" id="second">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left text-decoration-none" type="button"
+                          data-toggle="collapse" data-target="#collapseSecond"
+                          aria-expanded="false" aria-controls="collapseSecond">
+                    Get in range
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseSecond" class="collapse" aria-labelledby="second" data-parent="#customAccordion">
+                <div class="card-body">
+                  <form th:action="@{/getInRange}" method="post">
+                    <div class="row d-flex justify-content-around">
+                      <div class="col-md-3 input-group inputGroupContainer">
+                        <div class="row d-flex justify-content-center">
+                          <label for="start">Start date</label>
+                          <input class="form-control" type="date" id="start" name="start">
+                        </div>
+                      </div>
+                      <div class="col-md-3 input-group inputGroupContainer">
+                        <div class="row d-flex justify-content-center">
+                          <label for="end">End date</label>
+                          <input class="form-control" type="date" id="end" name="end">
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-end inputGroupContainer">
+                        <button class="btn btn-outline-primary" type="submit">Submit</button>
                       </div>
                     </div>
-                    <div class="col-md-3 input-group inputGroupContainer">
-                      <div class="row d-flex justify-content-center">
-                        <label for="end">End date</label>
-                        <input class="form-control" type="date" id="end" name="end">
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-end inputGroupContainer">
-                      <button class="btn btn-outline-primary" type="submit">Submit</button>
-                    </div>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
